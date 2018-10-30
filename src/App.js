@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CreateTodo from '../containers/CreateTodo'
-import Table from './containers/Table'
+import CreateTodo from './components/CreateTodo'
+import Table from './components/Table'
 
 class App extends Component {
   render() {

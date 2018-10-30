@@ -1,5 +1,17 @@
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './actions/actionTypes.js'
 
+// INITIAL_DATA = [
+//   {
+//     id: 0,
+//     text: 'Walk the Dog'
+//   },
+//   {
+//     id: 1,
+//     text: 'learn Redux'
+//   }
+// ]
+
+
 const INITIAL_DATA = []
 const TodoReducer = (state = INITIAL_DATA, action) => {
   switch (action.type) {

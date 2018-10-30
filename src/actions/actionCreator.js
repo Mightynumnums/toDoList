@@ -1,24 +1,24 @@
-import { ADD_TODO, REMOVE_TODO, SHOW_ALL, TOGGLE_TODO, SHOW_VISIBILITY_FILTER } from './actionTypes.js'
+import { ADD_TODO, REMOVE_TODO,TOGGLE_TODO, SET_VISIBILITY_FILTER } from './actionTypes.js'
 
 let ToDoId = 2
 
-export const addToDo = text =>({
-  type: ADD_TODO, 
+export const addTodo = text => ({
+  type: ADD_TODO,
   id: ToDoId++,
   text
 })
 
-export const deleteToDo = id => ({
+export const deleteTodo = id => ({
   type: REMOVE_TODO,
   id: id
 })
 
-export const toggleToDo = id => ({
+export const toggleTodo = id => ({
   type: TOGGLE_TODO,
   id: id
 })
 
 export const setVisibilityFilter = filter => ({
-  type: SET_VISIBILITY_FILTER
+  type: SET_VISIBILITY_FILTER,
   filter
 })

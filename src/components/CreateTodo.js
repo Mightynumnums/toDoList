@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions/actionCreator'
 import { bindActionCreators } from 'redux'
@@ -7,24 +7,24 @@ class CreateTodo extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todotext: '',
+      todoText: '',
     }
     this.onChangeTodoText = this.onChangeTodoText.bind(this)
   }
 
-  onChangeTodoText(e) {
+  onChangeTodoText(event) {
     this.setState({
-      todotext: e.target.value
+      todoText: event.target.value
     })
   }
 
   render() {
     return (
-      <div className="form-group row">
-        <div className="col-sm-10">
-          <input onChange={this.onChangeTodoText} value={this.state.todotext} type="text" className="form-control" id="inputEmail3" placeholder="add todo here" />
-          <button type="button" onClick={() => this.setState({ todotext: '' })} style={{ marginTop: "25px", marginRight: "15px" }} className="btn btn-danger">Cancel</button>
-          <button type="button" onClick={() => { this.props.addTodo(this.state.todotext); this.setState({ todotext: '' }) }} style={{ marginTop: "25px" }} className="btn btn-success">Add Todo</button>
+      <div>
+        <div>
+          <input onChange={this.onChangeTodoText} value={this.state.todoText} type="text" id="inputEmail3" placeholder="add todo here" />
+          <button type="button" onClick={() => this.setState({ todotText: '' })}>Cancel</button>
+          <button type="button" onClick={() => { this.props.addTodo(this.state.todoText); this.setState({ todoText: '' }) }}>Add Todo</button>
         </div>
       </div>
     );
