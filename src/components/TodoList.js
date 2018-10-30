@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
-import todos from '../reducers/todos';
-import { toggleTodo } from '../actions';
 
-const TodoList = ({ todo, toggleTodo }) => (
+const TodoList = ({ todos, toggleTodo }) => (
   <ul>
     {todos.map(todo => (
       <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
@@ -13,7 +11,7 @@ const TodoList = ({ todo, toggleTodo }) => (
 )
 
 TodoList.PropTypes = {
-  todod: PropTypes.arrayOf(
+  todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       completed: PropTypes.bool.isRequired,
